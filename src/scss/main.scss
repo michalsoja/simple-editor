@@ -2,15 +2,37 @@
 @import "_variables";
 
 
-html {
+* {
   box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: $yellow;
+  display: flex;
   background: $violet;
+  min-height: 100vh;
+}
+
+.logo{
+  max-height: 20vh;
+  color: #EF8354;
+  &__pen{
+    font-size:4em;
+    padding-top:.5em;
+    padding-left:1em;
+  }
+  &__heading{
+    font-family: Pacifico;
+    margin: 0;
+    padding-left: .5em;
+  }
+}
+
+
+.form{
+  max-height: 33vh;
+  justify-self: center;
+  align-self: center;
+
 }
