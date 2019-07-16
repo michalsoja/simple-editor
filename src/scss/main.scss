@@ -9,30 +9,81 @@
 }
 
 body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .4fr 1fr ;
+  grid-template-areas: ". logo ."
+  ". form .";
   background: $violet;
   min-height: 100vh;
 }
 
 .logo{
-  max-height: 20vh;
   color: #EF8354;
+  text-align: center;
+  padding-top: 10vh;
+  grid-area: logo;
   &__pen{
     font-size:4em;
-    padding-top:.5em;
-    padding-left:1em;
   }
   &__heading{
     font-family: Pacifico;
     margin: 0;
-    padding-left: .5em;
   }
 }
 
 
 .form{
-  max-height: 33vh;
-  justify-self: center;
-  align-self: center;
+  grid-area: form;
+  &__buttonWrapper{
+    display: flex;
+    justify-content:space-around;
+    @media(max-width:860px){
+      flex-direction: column;
+    }
+  }
+  &__textarea{
+    padding: 1em;
+    font-family: $main-font;
+    height: 33vh;
+    min-width: 33vw;
+    margin-bottom: 2em;
+    border:none;
+    border-radius: 10px;
+    
+  }
+  &__heading{
+    font-family: $main-font;
+    color: #EF8354;
+    text-align: center;
+    margin-bottom: 1em;
+  }
 
+  &__button{
+    font-family: $main-font;
+    color: #EF8354;
+    min-height: 6vh;
+    min-width: 15vw;
+    border: 2px solid #EF8354;
+    background-color: transparent;
+    border-radius: 10px;
+    transition:.5s ease-in-out;
+    transition-property: border-color,color;
+    cursor: pointer;
+    @media(max-width:860px){
+      min-width: 33vw;
+      height: 6vh;
+      margin-bottom: 1em;
+    }
+    
+    &--save:hover{
+      color: #97CC04;
+      border-color: #97CC04;
+    }
+    &--load:hover{
+      color: #2D7DD2;
+      border-color: #2D7DD2;
+    }
+  }
 }
+
